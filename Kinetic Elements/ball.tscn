@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmn1frepyunid"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nccd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_s7ojx"]
+material = SubResource("StandardMaterial3D_4nccd")
+radius = 0.013
+height = 0.027
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mwujx"]
+radius = 0.013
+
+[node name="Ball" type="RigidBody3D"]
+mass = 0.025
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_s7ojx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_mwujx")

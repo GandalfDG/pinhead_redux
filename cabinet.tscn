@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://clp28nedtj80"]
+
+[ext_resource type="PackedScene" uid="uid://b8q8e7je4kjmf" path="res://Static Elements/playfield.tscn" id="1_xpf6w"]
+[ext_resource type="PackedScene" uid="uid://dmn1frepyunid" path="res://Kinetic Elements/ball.tscn" id="2_sri1j"]
+
+[node name="Cabinet" type="Node3D"]
+
+[node name="Playfield" parent="." instance=ExtResource("1_xpf6w")]
+transform = Transform3D(1, 0, 0, 0, 0.992546, -0.121869, 0, 0.121869, 0.992546, 0, 0, 0)
+
+[node name="Ball" parent="." instance=ExtResource("2_sri1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0320767, 0.00643329, 0.156051)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999976, -0.00184385, 0.00669499, 0, 0.964105, 0.265522, -0.00694425, -0.265516, 0.964081, 0.10249, -0.00308266, 0.778892)
