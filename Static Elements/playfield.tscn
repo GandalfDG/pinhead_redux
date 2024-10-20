@@ -17,4 +17,5 @@ mesh = SubResource("BoxMesh_v41t6")
 shape = SubResource("BoxShape3D_h1cg4")
 
 [node name="Flipper" parent="." instance=ExtResource("1_4oobc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00699102, 0.0257475, 0.470439)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -0.108307, 0.0257475, 0.470439)
+flipper_button = "left"

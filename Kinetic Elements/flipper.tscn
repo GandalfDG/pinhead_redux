@@ -1,20 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw5udfuqeijbo"]
+[gd_scene load_steps=5 format=3 uid="uid://cw5udfuqeijbo"]
 
+[ext_resource type="Script" path="res://Kinetic Elements/flipper.gd" id="1_4rko8"]
 [ext_resource type="ArrayMesh" uid="uid://yfacypnkysn5" path="res://Meshes/flipper.res" id="1_u5u87"]
+[ext_resource type="PackedScene" uid="uid://brj6pblp2w8hj" path="res://Scripts/Physics/SolenoidSpring.tscn" id="3_otig5"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gjms8"]
 points = PackedVector3Array(0.000762985, 0, -0.00997037, -0.0015853, 0, -0.00987668, 0.000762985, 0.01, -0.00997037, 0.06538, 0, -0.00498714, -0.00383966, 0, -0.00923645, -0.0015853, 0.01, -0.00987668, 0.06538, 0.01, -0.00498714, 0.0665072, 0, -0.00476852, -0.00383966, 0.01, -0.00923645, -0.0058905, 0, -0.00808678, 0.0665072, 0.01, -0.00476852, 0.0675561, 0, -0.00429811, -0.0058905, 0.01, -0.00808678, -0.00761257, 0, -0.00649011, 0.0675561, 0.01, -0.00429811, 0.0684641, 0, -0.00360323, -0.00761257, 0.01, -0.00649011, -0.00891979, 0, -0.00453625, 0.0684641, 0.01, -0.00360323, 0.0691921, 0, -0.00271901, -0.00891979, 0.01, -0.00453625, -0.00972603, 0, -0.00233254, 0.0691921, 0.01, -0.00271901, 0.0697009, 0, -0.00169036, -0.00972603, 0.01, -0.00233254, -0.01, 0, -1.95205e-06, 0.0697009, 0.01, -0.00169036, 0.069967, 0, -0.000573862, -0.01, 0.01, -1.95205e-06, -0.00972603, 0, 0.00233058, 0.069967, 0.01, -0.000573862, 0.069967, 0, 0.00057191, -0.00972603, 0.01, 0.00233058, -0.00891979, 0, 0.00453429, 0.069967, 0.01, 0.00057191, 0.0697009, 0, 0.0016884, -0.00891979, 0.01, 0.00453429, -0.00761257, 0, 0.00648816, 0.0697009, 0.01, 0.0016884, 0.0691921, 0, 0.00271706, -0.00761257, 0.01, 0.00648816, -0.0058905, 0, 0.00808287, 0.0691921, 0.01, 0.00271706, 0.0684641, 0, 0.00360128, -0.0058905, 0.01, 0.00808287, -0.00383966, 0, 0.00923255, 0.0684641, 0.01, 0.00360128, 0.0675561, 0, 0.00429616, -0.00383966, 0.01, 0.00923255, -0.0015853, 0, 0.00987278, 0.0675561, 0.01, 0.00429616, 0.0665072, 0, 0.00476462, -0.0015853, 0.01, 0.00987278, 0.000762985, 0, 0.00997037, 0.0665072, 0.01, 0.00476462, 0.06538, 0, 0.00498323, 0.000762985, 0.01, 0.00997037, 0.06538, 0.01, 0.00498323)
 
 [node name="Flipper" type="Node3D"]
+script = ExtResource("1_4rko8")
 
-[node name="RigidBody" type="RigidBody3D" parent="."]
+[node name="FlipperBody" type="RigidBody3D" parent="."]
+mass = 0.1
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FlipperBody"]
 mesh = ExtResource("1_u5u87")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlipperBody"]
 shape = SubResource("ConvexPolygonShape3D_gjms8")
 
-[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
-node_a = NodePath("../RigidBody")
+[node name="SolenoidSpring" parent="FlipperBody" instance=ExtResource("3_otig5")]
+
+[node name="Pivot" type="HingeJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+node_a = NodePath("../FlipperBody")
+angular_limit/enable = true
+angular_limit/upper = 1.0472
+angular_limit/lower = 0.0
