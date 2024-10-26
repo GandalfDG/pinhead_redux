@@ -34,6 +34,6 @@ flipper_r={
 
 [physics]
 
-3d/solver/contact_recycle_radius=0.001
-3d/solver/contact_max_separation=0.01
+common/physics_ticks_per_second=240
+3d/default_gravity=20.0
 3d/solver/contact_max_allowed_penetration=0.001

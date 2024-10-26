@@ -1,5 +1,3 @@
-@tool
-
 extends PhysicsBehavior
 class_name SolenoidSpring
 
@@ -18,7 +16,7 @@ func _ready():
 		
 
 # apply impulse in positive Z direction of our Node3D
-func _physics_process(_delta):
+func process_behavior(_delta):
 	# spring force is a function of the stiffness and the distance from the rest position
 
 	if force_type == ForceType.LINEAR:
