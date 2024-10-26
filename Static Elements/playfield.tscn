@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cw5udfuqeijbo" path="res://Kinetic Elements/flipper.tscn" id="1_4oobc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_v41t6"]
-size = Vector3(0.514, 0.025, 1.143)
+size = Vector3(4.11, 0.025, 9.144)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h1cg4"]
-size = Vector3(0.514, 0.025, 1.143)
+size = Vector3(4.11, 0.025, 9.144)
 
 [node name="Playfield" type="StaticBody3D"]
 
@@ -18,4 +18,3 @@ shape = SubResource("BoxShape3D_h1cg4")
 
 [node name="Flipper" parent="." instance=ExtResource("1_4oobc")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -0.108307, 0.0257475, 0.470439)
-flipper_button = "left"

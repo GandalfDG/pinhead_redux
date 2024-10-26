@@ -4,11 +4,11 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_s7ojx"]
 material = SubResource("StandardMaterial3D_4nccd")
-radius = 0.013
-height = 0.027
+radius = 0.108
+height = 0.216
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mwujx"]
-radius = 0.013
+radius = 0.108
 
 [node name="Ball" type="RigidBody3D"]
 mass = 0.025
