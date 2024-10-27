@@ -4,7 +4,7 @@ extends Node3D
 
 var playfield_pickable_bodies: Array[Node]
 
-var ball = preload("res://elements/ball.tscn")
+var ball = preload("res://Kinetic Elements/ball.tscn")
 var ball_instance: Node
 
 var click_position: Vector3
@@ -42,4 +42,3 @@ func place_ball_with_velocity(origin: Vector3, velocity: Vector3):
 	
 	# give the ball an initial velocity
 	ball_node.set_linear_velocity(velocity)
-

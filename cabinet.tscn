@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://clp28nedtj80"]
+[gd_scene load_steps=5 format=3 uid="uid://clp28nedtj80"]
 
 [ext_resource type="PackedScene" uid="uid://b8q8e7je4kjmf" path="res://Static Elements/playfield.tscn" id="1_xpf6w"]
 [ext_resource type="PackedScene" uid="uid://dmn1frepyunid" path="res://Kinetic Elements/ball.tscn" id="2_sri1j"]
 [ext_resource type="Environment" uid="uid://c3uhtoawenwlm" path="res://Materials/hdri_environment.tres" id="3_2ckf8"]
+[ext_resource type="PackedScene" uid="uid://bw4hhnrj7m1jh" path="res://Utilities/debug_tools/debug_ball_spawner.tscn" id="3_po2ha"]
 
 [node name="Cabinet" type="Node3D"]
 
@@ -11,6 +12,8 @@ transform = Transform3D(1, 0, 0, 0, 0.992546, -0.121869, 0, 0.121869, 0.992546, 
 
 [node name="Ball" parent="." instance=ExtResource("2_sri1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.410418, -0.196732, 2.58442)
+
+[node name="DebugBallSpawner" parent="." instance=ExtResource("3_po2ha")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.999914, -0.00746102, 0.010755, 0, 0.821647, 0.569997, -0.0130896, -0.569948, 0.821577, 0.00201803, 1.5674, 5.16057)
