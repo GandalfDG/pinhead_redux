@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxu05ro3ose1i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s5783"]
+size = Vector3(0.216, 0.3, 0.01)
+
+[node name="DropTarget" type="Node3D"]
+
+[node name="Target Body" type="RigidBody3D" parent="."]
+
+[node name="Target Mesh" type="MeshInstance3D" parent="Target Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0782386, 0)
+mesh = SubResource("BoxMesh_s5783")
+
+[node name="Hinge and Slide" type="Generic6DOFJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.243844, 0)
+node_a = NodePath("../Target Body")
+linear_limit_y/enabled = false
+angular_limit_y/upper_angle = 0.0872665
