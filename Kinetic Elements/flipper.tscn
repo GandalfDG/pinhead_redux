@@ -23,7 +23,7 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_4tawg")
 
 [node name="SolenoidSpring" parent="FlipperBody" instance=ExtResource("3_otig5")]
-solenoid_force = 20.0
+solenoid_force = 100.0
 spring_stiffness = 1.0
 force_type = 1
 activation_type = 1
