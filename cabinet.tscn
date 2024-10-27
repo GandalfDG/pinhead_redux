@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://clp28nedtj80"]
+[gd_scene load_steps=4 format=3 uid="uid://clp28nedtj80"]
 
 [ext_resource type="PackedScene" uid="uid://b8q8e7je4kjmf" path="res://Static Elements/playfield.tscn" id="1_xpf6w"]
 [ext_resource type="PackedScene" uid="uid://dmn1frepyunid" path="res://Kinetic Elements/ball.tscn" id="2_sri1j"]
+[ext_resource type="Environment" uid="uid://c3uhtoawenwlm" path="res://Materials/hdri_environment.tres" id="3_2ckf8"]
 
 [node name="Cabinet" type="Node3D"]
 
@@ -13,3 +14,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11027, 0.295003, -1.42045)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.997974, -0.0473912, 0.0424502, 0, 0.66721, 0.74487, -0.0636234, -0.743361, 0.665858, 0.0223151, 1.21198, 1.33127)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_2ckf8")
