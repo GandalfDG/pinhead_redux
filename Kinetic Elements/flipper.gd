@@ -4,10 +4,17 @@ extends Node3D
 
 @onready var flipper_action: String = "flipper_l" if flipper_button == "left" else "flipper_r"
 @onready var actuator: SolenoidSpring = $FlipperBody/SolenoidSpring
+@onready var pivot: HingeJoint3D = $Pivot
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	actuator.init($FlipperBody)
+	if flipper_action != "flipper_l":
+		actuator.reverse_force = !actuator.reverse_force
+		var limit_angle = pivot.get_param(HingeJoint3D.PARAM_LIMIT_UPPER)
+		pivot.set_param(HingeJoint3D.PARAM_LIMIT_LOWER, -limit_angle)
+		pivot.set_param(HingeJoint3D.PARAM_LIMIT_UPPER, 0)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

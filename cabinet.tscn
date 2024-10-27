@@ -10,10 +10,10 @@
 transform = Transform3D(1, 0, 0, 0, 0.992546, -0.121869, 0, 0.121869, 0.992546, 0, 0, 0)
 
 [node name="Ball" parent="." instance=ExtResource("2_sri1j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11027, 0.295003, -1.42045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.410418, -0.196732, 2.58442)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.997974, -0.0473912, 0.0424502, 0, 0.66721, 0.74487, -0.0636234, -0.743361, 0.665858, 0.0223151, 1.21198, 1.33127)
+transform = Transform3D(0.999914, -0.00746102, 0.010755, 0, 0.821647, 0.569997, -0.0130896, -0.569948, 0.821577, 0.00201803, 1.5674, 5.16057)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_2ckf8")
