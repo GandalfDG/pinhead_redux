@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://vo28q8ie0wo5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iw1ht"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.05
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3iqfd"]
+height = 0.05
+radius = 0.2
+
+[node name="Rollover" type="Node3D"]
+
+[node name="Body" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.136403, 0)
+
+[node name="BodyMesh" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("CylinderMesh_iw1ht")
+
+[node name="BodyCollider" type="CollisionShape3D" parent="Body"]
+shape = SubResource("CylinderShape3D_3iqfd")
+
+[node name="SliderJoint3D" type="SliderJoint3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+node_a = NodePath("../Body")
+linear_limit/upper_distance = 0.0
+linear_limit/lower_distance = -0.5
