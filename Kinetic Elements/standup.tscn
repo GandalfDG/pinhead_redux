@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://mdycuco7rwl0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kg1gt"]
+size = Vector3(0.25, 0.25, 0.02)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jd71c"]
+size = Vector3(0.25, 0.25, 0.02)
+
+[node name="Standup" type="Node3D"]
+
+[node name="Target" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144161, 0.00962058)
+
+[node name="TargetMesh" type="MeshInstance3D" parent="Target"]
+mesh = SubResource("BoxMesh_kg1gt")
+
+[node name="TargetCollider" type="CollisionShape3D" parent="Target"]
+shape = SubResource("BoxShape3D_jd71c")
+
+[node name="Pivot" type="HingeJoint3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.213527, 0)
+node_a = NodePath("../Target")
+angular_limit/enable = true
+angular_limit/upper = 0.0
+angular_limit/lower = -0.0872665
