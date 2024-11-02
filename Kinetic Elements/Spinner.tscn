@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw0s3h0hpnlax"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oqmxt"]
+size = Vector3(0.2, 0.3, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wgddx"]
+size = Vector3(0.2, 0.3, 0.01)
+
+[node name="Spinner" type="Node3D"]
+
+[node name="SpinnerBody" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238706, 0)
+linear_damp = 20.0
+
+[node name="SpinnerMesh" type="MeshInstance3D" parent="SpinnerBody"]
+mesh = SubResource("BoxMesh_oqmxt")
+
+[node name="SpinnerCollider" type="CollisionShape3D" parent="SpinnerBody"]
+shape = SubResource("BoxShape3D_wgddx")
+
+[node name="Pivot" type="HingeJoint3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.25416, 0)
+node_a = NodePath("../SpinnerBody")
