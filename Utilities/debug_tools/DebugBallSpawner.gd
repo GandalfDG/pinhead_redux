@@ -38,7 +38,7 @@ func place_ball_with_velocity(origin: Vector3, velocity: Vector3):
 	var ball_node = ball_instance as RigidBody3D
 	
 	# position the ball 
-	ball_node.global_position = origin + .1 * Vector3.UP
+	ball_node.global_position = origin + 0.1 * Vector3.UP
 	
 	# give the ball an initial velocity
 	ball_node.set_linear_velocity(velocity)
