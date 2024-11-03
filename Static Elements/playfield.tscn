@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8q8e7je4kjmf"]
+[gd_scene load_steps=9 format=3 uid="uid://b8q8e7je4kjmf"]
 
 [ext_resource type="PackedScene" uid="uid://cw5udfuqeijbo" path="res://Kinetic Elements/flipper.tscn" id="1_4oobc"]
 [ext_resource type="PackedScene" uid="uid://mdycuco7rwl0" path="res://Kinetic Elements/standup.tscn" id="2_w62ir"]
 [ext_resource type="PackedScene" uid="uid://vo28q8ie0wo5" path="res://Kinetic Elements/Rollover.tscn" id="3_jeckk"]
 [ext_resource type="PackedScene" uid="uid://bw0s3h0hpnlax" path="res://Kinetic Elements/Spinner.tscn" id="4_l11m6"]
 [ext_resource type="PackedScene" uid="uid://dh5vej2d7ccef" path="res://Kinetic Elements/PopBumper.tscn" id="5_yqcvs"]
+[ext_resource type="PackedScene" uid="uid://5kg40iul0qly" path="res://Kinetic Elements/DropTarget.tscn" id="6_fhvpn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_v41t6"]
 size = Vector3(4.11, 0.025, 9.144)
@@ -38,3 +39,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.176593, 0.0125, 1.68905)
 
 [node name="PopBumper" parent="." instance=ExtResource("5_yqcvs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33317, 0.0125, 2.36009)
+
+[node name="DropTarget" parent="." instance=ExtResource("6_fhvpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62471, 0.0125, 3.21672)
