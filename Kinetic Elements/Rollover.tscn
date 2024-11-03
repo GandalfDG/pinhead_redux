@@ -13,6 +13,9 @@ radius = 0.2
 
 [node name="Body" type="RigidBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.136403, 0)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 
 [node name="BodyMesh" type="MeshInstance3D" parent="Body"]
 mesh = SubResource("CylinderMesh_iw1ht")

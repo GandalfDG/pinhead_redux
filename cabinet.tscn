@@ -16,7 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.410418, -0.196732, 2.58442)
 [node name="DebugBallSpawner" parent="." instance=ExtResource("3_po2ha")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999914, -0.00746102, 0.010755, 0, 0.821647, 0.569997, -0.0130896, -0.569948, 0.821577, 0.00201803, 1.5674, 5.16057)
+transform = Transform3D(0.999229, -0.014707, 0.0364011, 0, 0.927184, 0.374607, -0.0392598, -0.374318, 0.926469, -0.00896008, 0.772643, 5.29131)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_2ckf8")

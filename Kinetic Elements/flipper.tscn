@@ -11,6 +11,7 @@ points = PackedVector3Array(0.000762985, 0, -0.00997037, -0.0015853, 0, -0.00987
 script = ExtResource("1_4rko8")
 
 [node name="FlipperBody" type="RigidBody3D" parent="."]
+collision_layer = 2
 mass = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FlipperBody"]
@@ -23,8 +24,8 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_4tawg")
 
 [node name="SolenoidSpring" parent="FlipperBody" instance=ExtResource("3_otig5")]
-solenoid_force = 100.0
-spring_stiffness = 1.0
+solenoid_force = 20.0
+spring_stiffness = 5.0
 force_type = 1
 activation_type = 1
 

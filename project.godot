@@ -32,6 +32,11 @@ flipper_r={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Static Obstacles"
+3d_physics/layer_2="Kinematic Obstacles"
+
 [physics]
 
 common/physics_ticks_per_second=300
