@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh5vej2d7ccef"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o1hkn"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w8dx2"]
+height = 0.5
+radius = 0.25
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_chnav"]
+top_radius = 0.45
+bottom_radius = 0.45
+height = 0.01
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d0xuj"]
+height = 0.01
+radius = 0.45
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tjrch"]
+top_radius = 0.45
+bottom_radius = 0.35
+height = 0.1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o56wb"]
+points = PackedVector3Array(0.0749413, 0.05, 0.4, -0.0810944, 0.040579, -0.432842, -0.0749413, 0.05, -0.4, -0.432842, 0.040579, 0.0810944, 0.32498, -0.05, 0.0124511, -0.312451, -0.05, 0.0874706, 0.432842, 0.040579, -0.0810944, 0.0874706, -0.05, -0.312451, -0.105938, -0.0397268, 0.344278, -0.29103, -0.0396944, -0.211703, 0.278314, 0.0132535, 0.3048, 0.268126, 0.0402252, -0.348597, -0.268126, 0.0402252, 0.348597, -0.349961, 0.05, -0.212451, 0.12498, -0.05, 0.299922, 0.387471, 0.05, 0.12498, 0.291009, -0.0396915, -0.211688, 0.0810944, 0.040579, 0.432842, 0.316792, -0.0396094, 0.17163, -0.12498, -0.05, -0.299922, -0.32498, 0.05, 0.249961, -0.291009, -0.0396915, 0.211688, -0.268123, 0.0402248, -0.348594, -0.418976, 0.0405491, -0.135143, 0.390991, 0.0404485, 0.202211, 0.32498, 0.05, -0.249961, -0.344278, -0.0397268, -0.105938, 0.105938, -0.0397268, -0.344278, 0.0810926, 0.0405781, -0.432833, -0.0810926, 0.0405781, 0.432833, -0.105937, -0.0397264, -0.344274, 0.105937, -0.0397264, 0.344274)
+
+[node name="PopBumper" type="Node3D"]
+
+[node name="Stem" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stem"]
+mesh = SubResource("CylinderMesh_o1hkn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stem"]
+shape = SubResource("CylinderShape3D_w8dx2")
+
+[node name="Skirt" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0298849, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skirt"]
+mesh = SubResource("CylinderMesh_chnav")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skirt"]
+shape = SubResource("CylinderShape3D_d0xuj")
+
+[node name="SkirtJoint" type="Generic6DOFJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.048196, 0)
+node_a = NodePath("../Skirt")
+angular_limit_x/upper_angle = 0.0523599
+angular_limit_x/lower_angle = -0.0523599
+angular_limit_z/upper_angle = 0.0523599
+angular_limit_z/lower_angle = -0.0523599
+angular_spring_x/enabled = true
+
+[node name="Kicker" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.324926, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Kicker"]
+mesh = SubResource("CylinderMesh_tjrch")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kicker"]
+shape = SubResource("ConvexPolygonShape3D_o56wb")
+
+[node name="SliderJoint3D" type="SliderJoint3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.384939, 0)
+node_a = NodePath("../Kicker")
+linear_limit/upper_distance = 0.0
+linear_limit/lower_distance = -0.1
